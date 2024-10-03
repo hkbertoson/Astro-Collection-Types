@@ -1,9 +1,15 @@
 ---
+import type {CollectionEntry} from 'astro:content';
+
 interface Props {
-	name: string;
+	info: CollectionEntry<'firstName'>[];
 }
 
-const { name } = Astro.props;
+const {info} = Astro.props;
 ---
 
-<h1>{name}</h1>
+{
+	info.map((name) => {
+		return <h1>{name.data.name}</h1>;
+	})
+}

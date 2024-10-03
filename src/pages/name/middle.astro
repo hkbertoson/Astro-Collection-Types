@@ -1,12 +1,12 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import Link from '../../components/Link.astro';
-import {getEntry} from 'astro:content';
-const data = await getEntry('middleName', 'name');
-console.log(data)
+import Name from '../../components/Name.astro';
+import {getCollection} from 'astro:content';
+const data = await getCollection('middleName');
 ---
 
 <Layout title="Welcome to Astro.">
 	<Link link="/" label="Home" />
-  <h1>{data.data.middleName}</h1>
+	<Name info={data} />
 </Layout>
