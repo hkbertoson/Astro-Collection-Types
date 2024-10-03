@@ -6,6 +6,7 @@ import {getCollection} from 'astro:content';
 const data = await getCollection('lastName');
 ---
 
+<!-- This has a type error due to Name expecting firstName and not lastName -->
 <Layout title="Welcome to Astro.">
 	<Link link="/" label="Home" />
 	<Name info={data} />

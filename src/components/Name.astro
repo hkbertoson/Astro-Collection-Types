@@ -1,6 +1,9 @@
 ---
 import type {CollectionEntry} from 'astro:content';
 
+// Props here are "locked" to the firstName
+// Therefore, the type of the data is inferred to be 'firstName'
+// But how do we make it dynamic?
 interface Props {
 	info: CollectionEntry<'firstName'>[];
 }
